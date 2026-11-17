@@ -1,18 +1,31 @@
-# 👋🧩 Morphe Patches template
+# 👋🧩 Akkay Patches
 
-Template repository for Morphe Patches.
+<p align="center">
+  <a href="https://github.com/akkay-dev/morphe-patches/releases"><img src="https://img.shields.io/github/v/release/akkay-dev/morphe-patches?include_prereleases&style=for-the-badge" alt="GitHub Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/akkay-dev/morphe-patches?style=for-the-badge" alt="License"></a>
+  <a href="https://github.com/akkay-dev/morphe-patches/stargazers"><img src="https://img.shields.io/github/stars/akkay-dev/morphe-patches?style=for-the-badge" alt="GitHub Stars"></a>
+  <a href="https://github.com/akkay-dev/morphe-patches/network/members"><img src="https://img.shields.io/github/forks/akkay-dev/morphe-patches?style=for-the-badge" alt="GitHub Forks"></a>
+  <a href="https://github.com/akkay-dev/morphe-patches/issues"><img src="https://img.shields.io/github/issues/akkay-dev/morphe-patches?style=for-the-badge" alt="GitHub Issues"></a>
+</p>
 
-## ❓ About
+> [!NOTE]
+> This is an independent community patch collection maintained by [akkay-dev](https://github.com/akkay-dev) for use with [Morphe](https://morphe.software). It is not affiliated with or authored by the official Morphe project.
 
-Patches for apps I like.
+## 📖 Contents
 
-<!-- TODO: Update this about section with a brief introduction/summary about this repo and what it offers. -->
+- [How to use these patches](#-how-to-use-these-patches)
+- [Patches list](#-patches-list)
+- [Issues & bug reports](#-issues--bug-reports)
+- [FAQ](#-faq)
+- [Building locally](#️-building-locally)
+- [Disclaimer](#️-disclaimer)
+- [Credits & License](#️-credits)
 
-### How to use these patches
+## 📲 How to use these patches
 
-Click the button below, or manually add this repo url to Morphe Manager: https://github.com/xyz-user/xyz-patches
+Click the button below to add this source directly to **Morphe Manager**, or manually add `https://github.com/akkay-dev/morphe-patches`:
 
-<a href="https://morphe.software/add-source?github=xyz-user/xyz-patches">
+<a href="https://morphe.software/add-source?github=akkay-dev/morphe-patches">
   <img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="48">
 </a>
 
@@ -20,84 +33,55 @@ Click the button below, or manually add this repo url to Morphe Manager: https:/
 
 <!-- PATCHES_START EXPANDED -->
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
-     
-     If you wish for the patches list to be collapsed, then remove the word 'EXPANDED' from the comment tag above.
+#### A list of patches will automatically be shown here after the first release is published.
 
-     If you wish to manually keep this list updated then remove the PATCHES_START and PATCHES_END 
-     comment blocks entirely. -->
-
-#### A list of your patches will automatically be shown here after your first patches release is created.
-
-&nbsp;
-
-## 🚀 Getting development started
-
-To start using this template, follow these steps:
-
-1. [Setup](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-development/README.md) your development environment including adding a GitHub PAT as described [here](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md#-prepare-the-environment).
-2. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp). Select create a new repository, and **enable 'Include all branches'** 
-3. Enable "Allow GitHub Actions to create and approve pull requests" in your repo Settings > Actions > General > Workflow permissions
-4. Update the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the 
-   [group of the project](patches/build.gradle.kts#L1), and the [About](patches/build.gradle.kts#L6-L11))
-5. Update the [README.md](README.md) file to be specific of your repo, and update the links in the [issue templates](.github/ISSUE_TEMPLATE).
-6. Choose a name for your patches project. Keep in mind you must use a name that does not 
-   imply authorship by the Morphe open source project. If unsure, then simply name these
-   patches after yourself ("UserXYZ Morphe patches"). See the [NOTICE](NOTICE) for details. 
-7. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
-   Morphe Manager instead of your GitHub profile avatar.
-8. (Optional): Sign your releases, so Morphe Manager refuses a release that was changed or swapped after you published it:
-   1. Run `./gradlew generateSigningKey`. It creates `morphe-signing.pub` and `morphe-signing.key`.
-   2. Commit `morphe-signing.pub`. Never commit `morphe-signing.key`, it is already ignored by git.
-   3. Add the content of `morphe-signing.key` as the `MORPHE_SIGNING_KEY` secret in your repo
-      Settings > Secrets and variables > Actions, then keep a backup of it somewhere safe and delete the file.
-
-   Every release is signed from then on. If you lose the key or it leaks, create a new one the same way;
-   users then have to confirm the new key in Morphe Manager before they get your next release.
-
-🎉 You are now ready to start creating patches!
-
-## 🧑‍💻 Dev usage
-
-To develop and release your Patches using this template:
-
-- **Make all changes to the `dev` branch.**
-- For local development work build your patches using the gradle task `./gradlew buildAndroid` to generate the mpp file found in `patches/build/libs/patches-*.mpp`. Apply your patches locally using Morphe Desktop tool like any other patch bundle.
-- Always use [Semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages for commits. To keep it simple use only 3 commit message types: 
-  - `feat: Added a new feature`
-  - `fix: Some problem now fixed`
-  - `chore: Random change you do not want in the user facing changelog`
-- Commits of `fix:` and `feat:` will automatically generate new pre-releases and `chore:` will not create a new release.
-- Users can apply your dev branch releases by enabling `pre-release` in Morphe Manager patch sources.
-- When your dev branch is ready, and you want a stable release, merge dev branch to main (do not squash, and only merge).
-- **Always use semantic release (release.yml)**. Do not manually upload or create releases by hand
-  because many files must be updated and release.yml handles everything.
-
-## 🤓 Tips
-- See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md) for more examples of creating patches and fingerprints.
-- Do not use AI to create new release scripts. The `release.yml` here already handles everything.
-  If you need something custom with your releases then modify the existing `release.yml`
-  and `.releaserc` instead of writing everything new from scratch.
-- Do not manually edit or manually commit any generated files such as: `patches-list.json`,
-  `patches-bundle.json`, `CHANGELOG.md`.  These files will be automatically updated by `release.yml`.
-- Do not force push any semantic release commits as that will break all future releases.
-  If you need to fix a broken release, it's always easiest to create a new release instead of 
-  fixing an existing release.
-
-
-<!-- The patches end tag is intentionally placed here so the first release will clean up 
-     this readme of all developer instructions above. -->
 <!-- PATCHES_END -->
 
-### 🛠️ Building locally
+## 📬 Issues & bug reports
 
-- Run `./gradlew buildAndroid`
-- The built patches .mpp file is found in `patches/build/libs/patches-*.mpp`
-- Patch the mpp file using [Morphe-Desktop](https://github.com/MorpheApp/morphe-desktop)
-  like any other patch bundle.
+Found a broken patch or have a request? Open an issue using one of the templates below:
 
-See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) for more information.
+- [🐞 Bug report](https://github.com/akkay-dev/morphe-patches/issues/new?template=bug_report.yml)
+- [⭐ Feature / app request](https://github.com/akkay-dev/morphe-patches/issues/new?template=feature_request.yml)
+
+Before opening an issue, please search existing issues first and include the target app package name, exact app version, APK/APKM source format, and the `Akkay Patches` release version used.
+
+## ❓ FAQ
+
+### Which APK version or format should I download?
+Always prefer the exact verified version and container format (`APK` or `APKM`) listed under **Supported versions** in the [patches list](#-patches-list) from a clean source such as APKMirror or Uptodown (`arm64-v8a` recommended for modern devices). Avoid pre-modded or repacked APKs.
+
+### Why doesn't Google Sign-In work in a patched app?
+Re-signing an Android app changes its certificate signature, which causes Google Play Services to reject OAuth/Google login unless the app supports MicroG or alternative sign-in methods (such as email/password).
+
+### How do I receive `dev` pre-release updates?
+Enable **Pre-release** in your Morphe Manager patch source settings for `akkay-dev/morphe-patches`, or stay on the default channel for stable `main` releases.
+
+## 🛠️ Building locally
+
+1. Authenticate with GitHub Packages (`read:packages` scope) in `~/.gradle/gradle.properties` (`gpr.user` and `gpr.key`).
+2. Run `./gradlew buildAndroid` (JDK 21 recommended).
+3. Locate the compiled `.mpp` bundle in `patches/build/libs/patches-*.mpp`.
+4. Apply the bundle with [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop) or Morphe Manager.
+
+See the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) for full setup details.
+
+## ⚠️ Disclaimer
+
+> **Legal Notice**
+>
+> This repository is provided strictly for **educational and research purposes**.
+> - This project is **not affiliated** with any of the third-party application developers listed above, nor with the official Morphe project.
+> - Use these patches **at your own risk**. The author assumes no responsibility for account bans, data loss, or other consequences.
+> - Users are encouraged to **support app developers** by purchasing legitimate subscriptions if they find the applications useful.
+> - If you are a rights holder or developer with concerns regarding a patch, please [open an issue](https://github.com/akkay-dev/morphe-patches/issues) and it will be reviewed promptly.
+
+## ❤️ Credits
+
+- [Morphe](https://github.com/MorpheApp) & [Morphe Patches Template](https://github.com/MorpheApp/morphe-patches-template)
+- [ReVanced](https://github.com/ReVanced)
+- Everyone who tests patches and reports issues
 
 ## 📜 License
 
-UserXYZ Patches are licensed under the [GNU General Public License v3.0](LICENSE)
+Akkay Patches are licensed under the [GNU General Public License v3.0](LICENSE) — see [NOTICE](NOTICE) for additional terms under GPLv3 Section 7.
