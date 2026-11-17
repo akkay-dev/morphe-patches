@@ -32,8 +32,40 @@ Click the button below to add this source directly to **Morphe Manager**, or man
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0-dev.1](https://github.com/akkay-dev/morphe-patches/releases/tag/v1.0.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;2 patches total
+<details open>
+<summary>📦 Battery Guru&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
 
-#### A list of patches will automatically be shown here after the first release is published.
+**Package name:** `com.paget96.batteryguru`
+
+**🎯 Supported versions:**
+
+| 2.5.1.1 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Unlock Premium](#unlock-premium) | Unlocks premium subscription features and automatically disables advertisements. |  |
+
+</details>
+
+<details open>
+<summary>📦 ES File Explorer&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Package name:** `com.estrongs.android.pop`
+
+**🎯 Supported versions:**
+
+| 4.4.3.9 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Unlock VIP & Remove Ads](#unlock-vip-remove-ads) | Unlocks all VIP features (duplicate file cleaner, multi-window, cloud backup) and suppresses advertisements and purchase prompts. |  |
+
+</details>
 
 <!-- PATCHES_END -->
 
