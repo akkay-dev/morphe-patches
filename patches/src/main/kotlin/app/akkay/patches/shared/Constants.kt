@@ -32,4 +32,20 @@ object Constants {
             )
         )
     )
+
+    val COMPATIBILITY_ADGUARD = Compatibility(
+        name = "AdGuard",
+        packageName = "com.adguard.android",
+        apkFileType = ApkFileType.APK,
+        appIconColor = 0x67B279,
+        targets = listOf(
+            AppTarget(
+                version = "4.17.0"
+            ),
+            AppTarget(
+                version = null,
+                isExperimental = true
+            )
+        )
+    )
 }
